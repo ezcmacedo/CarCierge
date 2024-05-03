@@ -25,7 +25,7 @@ function Footer() {
 
                 <div id="promotion" className='flex flex-col items-center text-[1rem]'>
                     <span>Quer receber promoções exclusivas?</span>
-                    <input type="email" name="email" id="email_promotion" className='mt-2 w-[200px] p-[3px] flex justify-center 
+                    <input type="email" name="email" id="email_promotion" placeholder='Email...' className='mt-2 w-[200px] p-[3px] flex justify-center 
                     items-center rounded-[7px] appearance-none text-black'/>
                 </div>
             </div>

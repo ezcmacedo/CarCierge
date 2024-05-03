@@ -30,17 +30,17 @@ const LoginPage =()=> {
 
           <div id="cadastro" className="flex flex-col mb-3">
             <span>Ainda não tem uma conta?</span>
-            <Link to={""}>Cadastre-se</Link>
+            <Link to={"/register"} className="hover:underline">Cadastre-se</Link>
           </div>
 
-          <div id="button-login">
-            <button
+          <Link to={'/'}>
+          <button
               id="loginButton"
               className="bg-white hover:bg-green-950 hover:text-white duration-300 w-[300px] rounded-[7px] p-[7px] text-black font-bold "
             >
               Entrar
             </button>
-          </div>
+          </Link>
         </form>
       </div>
     </div>
