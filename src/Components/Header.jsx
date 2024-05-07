@@ -6,10 +6,13 @@ import { UilUserCircle } from '@iconscout/react-unicons'
 function Header() {
     return (
         <div>
-            <div id="navbar" className='bg-[#090B01] p-4    '>
+            <div id="navbar" className='bg-[#090B01] p-3'>
                 <div id="contents" className='flex items-center justify-between'>
                     <div id="logo" className=''>
+
+                        <Link to='/'>
                         <img src={CarCiergeLogo} alt="" className='w-16' />
+                        </Link>
                     </div>
 
                     <div id="items" className='text-[#B68322] flex gap-6'>
