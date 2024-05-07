@@ -16,15 +16,16 @@ function Header() {
                     </div>
 
                     <div id="items" className='text-[#B68322] flex gap-6'>
-                        <a href="Services">
+                        <Link to={"/NotFoundPage"}>
                             Serviços
-                        </a>
-                        <a href="About">
-                            Quem Somos
-                        </a>
-                        <a href="Cars">
+                        </Link>
+                        <Link to={"/NotFoundPage"}>
                             Veículos
-                        </a>
+                        </Link>
+                        <Link to={"/NotFoundPage"}>
+                            Sobre Nós
+                        </Link>
+                        
                         <Link to={"/login"} className='flex gap-1'><UilUserCircle/>Login</Link>
                     </div>
                 </div>
