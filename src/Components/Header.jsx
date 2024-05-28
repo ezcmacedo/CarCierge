@@ -9,7 +9,6 @@ function Header() {
             <div id="navbar" className='bg-[#090B01] p-3'>
                 <div id="contents" className='flex items-center justify-between'>
                     <div id="logo" className=''>
-
                         <Link to='/'>
                         <img src={CarCiergeLogo} alt="" className='w-16' />
                         </Link>
