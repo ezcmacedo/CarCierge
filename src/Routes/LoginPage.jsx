@@ -11,7 +11,7 @@ const LoginPage =()=> {
         <span className="mt-6 text-[1.5rem]">Bem vindo de volta</span>
 
         <form action="">
-          <div id="input_group" className="mt-10">
+          <div id="input_group" className="mt-10 text-black">
             <input
               type="email"
               name="email-login"
@@ -24,7 +24,7 @@ const LoginPage =()=> {
               name="password-login"
               id="password-login"
               placeholder="Senha..."
-              className="p-[7px] w-[300px] rounded-[7px] m-3"
+              className="p-[7px] w-[300px] rounded-[7px] m-3 text-black"
             />
           </div>
 

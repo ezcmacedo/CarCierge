@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './Routes/HomePage';
 import LoginPage from './Routes/LoginPage';
 import RegisterPage from './Routes/RegisterPage';
+import NotFoundPage from './Routes/NotFoundPage';
 
 const router = createBrowserRouter([
   {
@@ -26,12 +27,14 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <RegisterPage/>
+      },
+      {
+        path: "NotFoundPage",
+        element: <NotFoundPage/>
       }
     ]
   },
 ]);
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
