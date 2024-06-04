@@ -1,12 +1,12 @@
 import './App.css';
-import UilReact from '@iconscout/react-unicons/icons/uil-react'
+// import UilReact from '@iconscout/react-unicons/icons/uil-react'
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-blackfigma bg-opacity-90 h-screen flex flex-col">
       
       <Header></Header>
       <Outlet />
