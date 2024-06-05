@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App bg-blackfigma bg-opacity-90 h-screen flex flex-col">
+    <div className="App bg-blackfigma bg-opacity-90 min-h-screen">
       
       <Header></Header>
       <Outlet />

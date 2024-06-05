@@ -1,14 +1,14 @@
 import React from 'react'
 import CarouselHome from '../Components/CarouselHome/CarouselHome'
 import CarouselMenu from '../Components/CarouselHome/CarouselMenu'
-import Services from '../Components/Services'
+import ServicesBanner from '../Components/ServicesBanner'
 
 function HomePage() {
   return (
     <>
         <CarouselMenu />
         <CarouselHome />
-        <Services/>
+        <ServicesBanner />
     </>
   )
 }
