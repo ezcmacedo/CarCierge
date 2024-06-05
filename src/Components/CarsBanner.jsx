@@ -60,7 +60,7 @@ const CarsBanner = () => {
 
         const interval = setInterval(() => {
             setVisibleCars(getRandomCars());
-        }, 5000); // Muda a cada 5 segundos, ajuste conforme necessário
+        }, 5000);
 
         return () => clearInterval(interval);
     }, []);
@@ -70,7 +70,7 @@ const CarsBanner = () => {
             <div className='w-[99%] m-auto text-[1.7rem] bg-[#B68322] font-inter font-extrabold text-white'>
                 <h1>Nossos Carros</h1>
             </div>
-            <div>
+            <div className='pb-[12rem]'>
                 <ul className='grid grid-cols-3 gap-5 font-inter text-white'>
                     {visibleCars.map((carro, index) => (
                         <li key={index} className='w-[80%] min-h-[500px] flex flex-col m-auto justify-center items-center bg-[#B68322] opacity-90 z-0 mt-10'>
