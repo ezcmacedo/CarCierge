@@ -3,7 +3,7 @@ import React from 'react'
 const ServicesBanner = () => {
     return (
         <div className='h-[340px] w-[80.2%] my-10 mx-auto flex flex-col items-center justify-center bg-[#b68222b6] font-inter text-white font-extrabold '>
-            <h1 className='text-[2rem]'>Conheça nossos serviços</h1>
+            <h1 className='text-[1.8rem]'>Conheça nossos serviços</h1>
             <ul className='grid grid-cols-5 gap-20 mx-auto py-10'>
                 <ui>
                     <div className='h-[150px] w-[125px] flex flex-col items-center justify-center'>
