@@ -4,47 +4,48 @@ const CarsBanner = () => {
     const carros = [
         {
             nome: "BMW X1 2024",
-            foto: "/img/carros/convencional/conv-bmw-x1-2024-1-principal.png"
+            foto: "https://live.staticflickr.com/65535/53773148637_3b6550b4c3_o.png"
         },
         {
             nome: "Toyota Camry 2019",
-            foto: "/img/carros/convencional/conv-toyota-camry-2019-1-photoroom.png"
-        },
+            foto: "https://live.staticflickr.com/65535/53774068731_bb6667f501_o.png"
+        },    
         {
             nome: "Volvo XC40 2021",
-            foto: "/img/carros/convencional/conv-volvo-xc40-2021-1-photoroom.png"
+            foto: "https://live.staticflickr.com/65535/53774389939_f9cef239f8_o.png"
+            
         },
         {
             nome: "BMW X7 RR Edition",
-            foto: "/img/carros/eventos/limousine-BMW-X7-Rolls-Royce-Edition-1-principal.png"
+            foto: "https://live.staticflickr.com/65535/53773148897_cb0ec8684d_o.png"
         },
         {
             nome: "Mercedes Maybach 600",
-            foto: "/img/carros/eventos/limusine-mercedes-mercedes-maybach-600-pullman-2015-1-Principal.png"
+            foto: "https://live.staticflickr.com/65535/53774068946_35779fa627_o.png"
         },
         {
             nome: "Ranger Rover VIP Edition",
-            foto: "/img/carros/eventos/limusine-Ranger-rover-VIP-Edition-1-principal.png"
+            foto: "https://live.staticflickr.com/65535/53773148907_208189c9d9_o.png"
         },
         {
             nome: "Rolls Royce Phantom",
-            foto: "/img/carros/eventos/limusine-Rolls-Royce-Phantom-1-principal.png"
+            foto: "https://live.staticflickr.com/65535/53774485985_a7a59426c3_o.png"
         },
         {
             nome: "Audi RS6 Avant",
-            foto: "/img/carros/luxo/audi-rs6-avant1-Photoroom.png"
+            foto: "https://live.staticflickr.com/65535/53774069291_34e54b39aa_o.png"
         },
         {
             nome: "BMW X6 2020",
-            foto: "/img/carros/luxo/bmw-x6-2020-1-Photoroom.png"
+            foto: "https://live.staticflickr.com/65535/53774486305_844a6f113f_o.png"
         },
         {
             nome: "Land Rover Velar 2021",
-            foto: "/img/carros/luxo/land-rover-range-rover-velar-2021-2-Photoroom.png"
+            foto: "https://live.staticflickr.com/65535/53774069281_ae2ef02bd6_o.png"
         },
         {
             nome: "Mercedes Benz S580 2021",
-            foto: "/img/carros/luxo/mercedes-benz-s580-009-2021-3-Photoroom.png"
+            foto: "https://live.staticflickr.com/65535/53774486300_f65cbf2e53_o.png"
         },
     ];
 

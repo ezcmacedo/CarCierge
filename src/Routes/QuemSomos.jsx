@@ -5,7 +5,9 @@ const QuemSomos = () => {
 
     const content = [
         {
-            foto: "/img/quemsomos/carcierge-logo-Photoroom.png",
+
+            
+            foto: "https://live.staticflickr.com/65535/53774375694_58e20e0254_o.png",
             title: "NOSSA HISTÓRIA",
             text: (
                 <>
@@ -22,7 +24,7 @@ const QuemSomos = () => {
             ),
         },
         {
-            foto: "/img/quemsomos/frota-veiculos-Photoroom.png",
+            foto: "https://live.staticflickr.com/65535/53774054626_6ae0eef41e_o.png",
             title: "NOSSA VISÃO",
             text: (
                 <>
@@ -36,7 +38,7 @@ const QuemSomos = () => {
             ),
         },
         {
-            foto: "/img/quemsomos/frota-veiculos2-Photoroom.png",
+            foto: "https://live.staticflickr.com/65535/53774255628_a39daf9c6c_o.png",
             title: "NOSSOS VALORES",
             text: (
                 <ul className="list-decimal list-inside text-gray-700 mb-4 text-justify">
