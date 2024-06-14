@@ -10,6 +10,7 @@ import HomePage from './Routes/HomePage';
 import LoginPage from './Routes/LoginPage';
 import RegisterPage from './Routes/RegisterPage';
 import NotFoundPage from './Routes/NotFoundPage';
+import QuemSomos from './Routes/QuemSomos';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "NotFoundPage",
         element: <NotFoundPage/>
+      },
+      {
+        path: "AboutUs",
+        element: <QuemSomos/>
       }
     ]
   },

@@ -1,0 +1,400 @@
+[
+    {
+      "Toyota_Camry_2019": {
+        "modelo": "Toyota Camry 2019",
+        "descricao": "O Toyota Camry 2019 é um sedã de médio porte conhecido por sua confiabilidade, eficiência de combustível e um bom conjunto de recursos tecnológicos. Equipado com um motor 2.5 litros de 4 cilindros, oferece uma condução suave e confortável, ideal para uso diário.",
+        "especificacoes_tecnicas": {
+          "motor": "2.5 litros, 4 cilindros, DOHC",
+          "potencia": "203 hp @ 6600 rpm",
+          "torque": "178 lb-ft @ 5000 rpm",
+          "transmissao": "Automática de 8 velocidades",
+          "tracao": "Dianteira",
+          "consumo": "29 mpg (cidade) / 41 mpg (estrada)",
+          "capacidade_tanque_combustivel": "14.5 galões (55 litros)",
+          "dimensoes": {
+            "comprimento": "191.7 polegadas (4879 mm)",
+            "largura": "72.4 polegadas (1839 mm)",
+            "altura": "56.9 polegadas (1445 mm)",
+            "distancia_entre_eixos": "111.2 polegadas (2824 mm)"
+          },
+          "peso": "3245 libras (1470 kg)",
+          "capacidade_passageiros": "5 pessoas",
+          "volume_porta_malas": "14.1 pés cúbicos (400 litros)"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53773147362_b507094827_o.png",
+          "https://live.staticflickr.com/65535/53774068731_bb6667f501_o.png",
+          "https://live.staticflickr.com/65535/53774388749_6e0e5b1905_o.png",
+          "https://live.staticflickr.com/65535/53774484245_f7860fc987_o.png"
+        ]
+      }
+    },
+    {
+      "BMW_X1_2024": {
+        "modelo": "BMW X1 2024",
+        "descricao": "O BMW X1 2024 é um SUV compacto de luxo que oferece uma combinação de estilo, desempenho e tecnologia. Com um design moderno e um interior sofisticado, o X1 é uma ótima opção para quem procura um carro versátil para o dia a dia e para aventuras de fim de semana.",
+        "especificacoes_tecnicas": {
+          "motor": {
+            "s28i": "2.0 litros, 4 cilindros, turbo, 241 hp @ 5000 rpm",
+            "xDrive28i": "2.0 litros, 4 cilindros, turbo, 241 hp @ 5000 rpm"
+          },
+          "torque": {
+            "s28i": "258 lb-ft @ 1750-4500 rpm",
+            "xDrive28i": "258 lb-ft @ 1750-4500 rpm"
+          },
+          "transmissao": "Automática de 7 velocidades",
+          "tracao": {
+            "s28i": "Dianteira",
+            "xDrive28i": "Integral"
+          },
+          "consumo": {
+            "s28i": "28 mpg (cidade) / 36 mpg (estrada)",
+            "xDrive28i": "27 mpg (cidade) / 34 mpg (estrada)"
+          },
+          "capacidade_tanque_combustivel": "13.7 galões (52 litros)",
+          "dimensoes": {
+            "comprimento": "4500 mm",
+            "largura": "1845 mm",
+            "altura": "1642 mm",
+            "distancia_entre_eixos": "2692 mm"
+          },
+          "peso": "1640 kg",
+          "capacidade_passageiros": "5 pessoas",
+          "volume_porta_malas": "540 litros"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53773147432_c11e085ec3_o.png",
+          "https://live.staticflickr.com/65535/53773148637_3b6550b4c3_o.png",
+          "https://live.staticflickr.com/65535/53774067421_e6aac621f0_o.png",
+          "https://live.staticflickr.com/65535/53774067426_d52c7a9f6e_o.png"
+        ]
+      }
+    },
+    {
+      "Volvo_XC40_2021": {
+        "modelo": "Volvo XC40 2021",
+        "descricao": "O Volvo XC40 2021 é um SUV compacto de luxo que oferece um design elegante, interior moderno e tecnologia avançada. Disponível em versões a gasolina, diesel e híbrida, o XC40 é uma ótima opção para quem busca um carro versátil e com um toque de sofisticação.",
+        "especificacoes_tecnicas": {
+          "motor": {
+            "T4": "2.0 litros, 4 cilindros, turbo, 187 hp @ 5000 rpm",
+            "T5": "2.0 litros, 4 cilindros, turbo, 248 hp @ 5500 rpm",
+            "B4": "2.0 litros, 4 cilindros, diesel, 190 hp @ 4000 rpm",
+            "B5": "2.0 litros, 4 cilindros, diesel, 235 hp @ 4000 rpm",
+            "Recharge": "Motor elétrico + motor a gasolina (T4), 261 hp + 87 hp (combinados)"
+          },
+          "torque": {
+            "T4": "221 lb-ft @ 1800-4000 rpm",
+            "T5": "258 lb-ft @ 1800-4500 rpm",
+            "B4": "310 lb-ft @ 1750-2500 rpm",
+            "B5": "354 lb-ft @ 1750-3000 rpm",
+            "Recharge": "295 lb-ft + 177 lb-ft (combinados)"
+          },
+          "transmissao": "Automática de 8 velocidades",
+          "tracao": {
+            "T4": "Dianteira",
+            "T5": "Integral (opcional)",
+            "B4": "Dianteira",
+            "B5": "Integral (opcional)",
+            "Recharge": "Integral"
+          },
+          "consumo": {
+            "T4": "25 mpg (cidade) / 33 mpg (estrada)",
+            "T5": "24 mpg (cidade) / 32 mpg (estrada)",
+            "B4": "31 mpg (cidade) / 40 mpg (estrada)",
+            "B5": "29 mpg (cidade) / 38 mpg (estrada)",
+            "Recharge": "22 mpg (cidade) / 28 mpg (estrada)" 
+          },
+          "capacidade_tanque_combustivel": "13.2 galões (50 litros)",
+          "dimensoes": {
+            "comprimento": "173.6 polegadas (4408 mm)",
+            "largura": "72.4 polegadas (1839 mm)",
+            "altura": "65.2 polegadas (1656 mm)",
+            "distancia_entre_eixos": "104.3 polegadas (2648 mm)"
+          },
+          "peso": "3373 libras (1530 kg)",
+          "capacidade_passageiros": "5 pessoas",
+          "volume_porta_malas": "17.8 pés cúbicos (504 litros)"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53773147352_53af2fc02c_o.png",
+          "https://live.staticflickr.com/65535/53774389939_f9cef239f8_o.png",
+          "https://live.staticflickr.com/65535/53774484210_bda6657f33_o.png",
+          "https://live.staticflickr.com/65535/53774484225_b87c55b057_o.png"
+        ]
+      }
+    },
+    {
+      "BMW_X7_RR_Edition": {
+        "modelo": "BMW X7 RR Edition",
+        "descricao": "O BMW X7 RR Edition é uma versão limitada e esportiva do SUV de luxo BMW X7, oferecendo um visual ainda mais agressivo e um desempenho aprimorado.  Projetado para combinar luxo com esportividade, o X7 RR Edition oferece uma experiência de condução emocionante e um visual único.",
+        "especificacoes_tecnicas": {
+          "motor": "4.4 litros, V8, biturbo, 600 hp @ 5500 rpm",
+          "torque": "553 lb-ft @ 1800-4600 rpm",
+          "transmissao": "Automática de 8 velocidades",
+          "tracao": "Integral (xDrive)",
+          "consumo": "16 mpg (cidade) / 22 mpg (estrada)", 
+          "capacidade_tanque_combustivel": "24.6 galões (93 litros)",
+          "dimensoes": {
+            "comprimento": "203.7 polegadas (5173 mm)",
+            "largura": "78.9 polegadas (2004 mm)",
+            "altura": "70.9 polegadas (1801 mm)",
+            "distancia_entre_eixos": "122.2 polegadas (3105 mm)"
+          },
+          "peso": "5512 libras (2499 kg)",
+          "capacidade_passageiros": "7 pessoas",
+          "volume_porta_malas": "48.6 pés cúbicos (1375 litros)"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53773147232_ee4e6aab2a_o.png",
+          "https://live.staticflickr.com/65535/53773148897_cb0ec8684d_o.png",
+          "https://live.staticflickr.com/65535/53774484110_8aece7fbf7_o.png"
+        ]
+      }
+    },
+    {
+      "Mercedes_Maybach_600": {
+        "modelo": "Mercedes-Maybach S 600",
+        "descricao": "O Mercedes-Maybach S 600 é um sedã de luxo de alto desempenho que oferece um nível excepcional de conforto, luxo e tecnologia.  Com um motor potente, um interior opulento e recursos de última geração, o Maybach S 600 é o epítome de exclusividade e sofisticação.",
+        "especificacoes_tecnicas": {
+          "motor": "6.0 litros, V12, biturbo, 523 hp @ 4800 rpm",
+          "torque": "612 lb-ft @ 1900-4200 rpm",
+          "transmissao": "Automática de 9 velocidades",
+          "tracao": "Traseira",
+          "consumo": "13 mpg (cidade) / 20 mpg (estrada)", 
+          "capacidade_tanque_combustivel": "23.8 galões (90 litros)",
+          "dimensoes": {
+            "comprimento": "214.9 polegadas (5459 mm)",
+            "largura": "77.3 polegadas (1964 mm)",
+            "altura": "59.7 polegadas (1516 mm)",
+            "distancia_entre_eixos": "134.7 polegadas (3422 mm)"
+          },
+          "peso": "5333 libras (2419 kg)",
+          "capacidade_passageiros": "4 pessoas",
+          "volume_porta_malas": "17.2 pés cúbicos (488 litros)"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53774068946_35779fa627_o.png",
+          "https://live.staticflickr.com/65535/53774268693_d390194f22_o.png",
+          "https://live.staticflickr.com/65535/53774268743_d418759395_o.png",
+          "https://live.staticflickr.com/65535/53774484070_e0c7876f46_o.png"
+        ]
+      }
+    },
+    {
+      "Range_Rover_VIP_Edition": {
+        "modelo": "Range Rover VIP Edition",
+        "descricao": "O Range Rover VIP Edition é uma versão altamente personalizada do icônico SUV de luxo, projetada para oferecer uma experiência de viagem ainda mais exclusiva e luxuosa.  Com um interior requintado, recursos avançados e detalhes personalizados, o VIP Edition é a escolha perfeita para quem busca o máximo em luxo e exclusividade.",
+        "especificacoes_tecnicas": {
+          "motor": {
+            "P400": "2.0 litros, 4 cilindros, turbo, 395 hp @ 5500 rpm",
+            "P525": "3.0 litros, 6 cilindros, turbo, 510 hp @ 5500 rpm",
+            "P530": "4.4 litros, V8, biturbo, 523 hp @ 5500 rpm",
+            "SVAutobiography": "5.0 litros, V8, supercharged, 557 hp @ 6500 rpm"
+          },
+          "torque": {
+            "P400": "406 lb-ft @ 1500-4500 rpm",
+            "P525": "516 lb-ft @ 2000-5000 rpm",
+            "P530": "553 lb-ft @ 1800-4600 rpm",
+            "SVAutobiography": "516 lb-ft @ 2500-5000 rpm"
+          },
+          "transmissao": "Automática de 8 velocidades",
+          "tracao": "Integral (Terrain Response 2)",
+          "consumo": {
+            "P400": "22 mpg (cidade) / 28 mpg (estrada)", 
+            "P525": "20 mpg (cidade) / 26 mpg (estrada)",
+            "P530": "19 mpg (cidade) / 25 mpg (estrada)",
+            "SVAutobiography": "17 mpg (cidade) / 23 mpg (estrada)"
+          },
+          "capacidade_tanque_combustivel": "26.4 galões (100 litros)",
+          "dimensoes": {
+            "comprimento": "204.7 polegadas (5198 mm)",
+            "largura": "80.3 polegadas (2040 mm)",
+            "altura": "72.1 polegadas (1831 mm)",
+            "distancia_entre_eixos": "122.2 polegadas (3105 mm)"
+          },
+          "peso": "5381 libras (2440 kg)",
+          "capacidade_passageiros": "5 pessoas",
+          "volume_porta_malas": "29.9 pés cúbicos (847 litros)"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53773148907_208189c9d9_o.png",
+          "https://live.staticflickr.com/65535/53774268688_3a776907a4_o.png",
+          "https://live.staticflickr.com/65535/53774268723_2eeb2ec242_o.png"
+        ]
+      }
+    },
+    {
+      "Rolls_Royce_Phantom": {
+        "modelo": "Rolls-Royce Phantom",
+        "descricao": "O Rolls-Royce Phantom é um sedã de luxo de alto desempenho que define o padrão em luxo, exclusividade e artesanato.  Com um motor potente, um interior opulento, recursos de última geração e uma reputação incomparável, o Phantom é o epítome de luxo e requinte.",
+        "especificacoes_tecnicas": {
+          "motor": "6.75 litros, V12, biturbo, 563 hp @ 5000 rpm",
+          "torque": "664 lb-ft @ 1700 rpm",
+          "transmissao": "Automática de 8 velocidades",
+          "tracao": "Traseira",
+          "consumo": "11 mpg (cidade) / 17 mpg (estrada)", 
+          "capacidade_tanque_combustivel": "22.5 galões (85 litros)",
+          "dimensoes": {
+            "comprimento": "229.1 polegadas (5821 mm)",
+            "largura": "79.9 polegadas (2030 mm)",
+            "altura": "61.2 polegadas (1555 mm)",
+            "distancia_entre_eixos": "142.4 polegadas (3618 mm)"
+          },
+          "peso": "5864 libras (2660 kg)",
+          "capacidade_passageiros": "4 pessoas",
+          "volume_porta_malas": "16.8 pés cúbicos (476 litros)"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53774067126_2eb815c179_o.png",
+          "https://live.staticflickr.com/65535/53774484020_36da547334_o.png",
+          "https://live.staticflickr.com/65535/53774485985_a7a59426c3_o.png"
+        ]
+      }
+    },
+    {
+      "Audi_RS6_Avant": {
+        "modelo": "Audi RS6 Avant",
+        "descricao": "O Audi RS6 Avant é um station wagon de alto desempenho que combina a praticidade de um carro familiar com o desempenho de um supercarro.  Com um motor potente, um sistema de tração integral quattro e um design esportivo, o RS6 Avant é uma máquina impressionante que oferece desempenho e funcionalidade em um pacote elegante.",
+        "especificacoes_tecnicas": {
+          "motor": "4.0 litros, V8, biturbo, 591 hp @ 6000 rpm",
+          "torque": "590 lb-ft @ 2050-4500 rpm",
+          "transmissao": "Automática de 8 velocidades (Tiptronic)",
+          "tracao": "Integral (quattro)",
+          "consumo": "16 mpg (cidade) / 22 mpg (estrada)", 
+          "capacidade_tanque_combustivel": "22.5 galões (85 litros)",
+          "dimensoes": {
+            "comprimento": "195.7 polegadas (4972 mm)",
+            "largura": "75.2 polegadas (1910 mm)",
+            "altura": "58.3 polegadas (1481 mm)",
+            "distancia_entre_eixos": "114.2 polegadas (2899 mm)"
+          },
+          "peso": "4714 libras (2137 kg)",
+          "capacidade_passageiros": "5 pessoas",
+          "volume_porta_malas": "56.5 pés cúbicos (1600 litros)"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53773147522_e7d8b26855_o.png",
+          "https://live.staticflickr.com/65535/53774069291_34e54b39aa_o.png",
+          "https://live.staticflickr.com/65535/53774269203_05dbd6d4a6_o.png",
+          "https://live.staticflickr.com/65535/53774484495_4d996b59a3_o.png"
+        ]
+      }
+    },
+    {
+      "BMW_X6_2020": {
+        "modelo": "BMW X6 2020",
+        "descricao": "O BMW X6 2020 é um SUV coupé de luxo que combina o estilo elegante de um cupê com a praticidade de um SUV.  Com um design esportivo, um interior sofisticado e uma gama de motores potentes, o X6 oferece uma experiência de condução emocionante e um visual único.",
+        "especificacoes_tecnicas": {
+          "motor": {
+            "xDrive40i": "3.0 litros, 6 cilindros, turbo, 335 hp @ 5500-6500 rpm",
+            "xDrive50i": "4.4 litros, V8, biturbo, 523 hp @ 5500-6000 rpm",
+            "M50i": "4.4 litros, V8, biturbo, 523 hp @ 5500-6000 rpm"
+          },
+          "torque": {
+            "xDrive40i": "332 lb-ft @ 1500-5200 rpm",
+            "xDrive50i": "553 lb-ft @ 1800-4600 rpm",
+            "M50i": "553 lb-ft @ 1800-4600 rpm"
+          },
+          "transmissao": "Automática de 8 velocidades",
+          "tracao": "Integral (xDrive)",
+          "consumo": {
+            "xDrive40i": "21 mpg (cidade) / 28 mpg (estrada)",
+            "xDrive50i": "18 mpg (cidade) / 24 mpg (estrada)",
+            "M50i": "17 mpg (cidade) / 23 mpg (estrada)"
+          },
+          "capacidade_tanque_combustivel": "21.7 galões (82 litros)",
+          "dimensoes": {
+            "comprimento": "194.7 polegadas (4948 mm)",
+            "largura": "78.8 polegadas (2002 mm)",
+            "altura": "65.7 polegadas (1670 mm)",
+            "distancia_entre_eixos": "115.8 polegadas (2942 mm)"
+          },
+          "peso": "4751 libras (2155 kg)",
+          "capacidade_passageiros": "5 pessoas",
+          "volume_porta_malas": "27.5 pés cúbicos (780 litros)"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53773147437_cb7a7d6ce9_o.png",
+          "https://live.staticflickr.com/65535/53774269028_1f5e503580_o.png",
+          "https://live.staticflickr.com/65535/53774484395_a9deea2281_o.png",
+          "https://live.staticflickr.com/65535/53774486305_844a6f113f_o.png"
+        ]
+      }
+    },
+    {
+      "Land_Rover_Velar_2021": {
+        "modelo": "Land Rover Velar 2021",
+        "descricao": "O Land Rover Velar 2021 é um SUV de luxo que combina estilo elegante com capacidade off-road.  Com um design moderno, um interior sofisticado e uma gama de motores potentes, o Velar oferece uma experiência de condução confortável e versátil, tanto em ambientes urbanos como em terrenos acidentados.",
+        "especificacoes_tecnicas": {
+          "motor": {
+            "P250": "2.0 litros, 4 cilindros, turbo, 246 hp @ 5500 rpm",
+            "P300": "2.0 litros, 4 cilindros, turbo, 296 hp @ 5500 rpm",
+            "P380": "3.0 litros, 6 cilindros, turbo, 375 hp @ 5500 rpm",
+            "P400": "3.0 litros, 6 cilindros, turbo, 395 hp @ 5500 rpm",
+            "SVAutobiography Dynamic Edition": "5.0 litros, V8, supercharged, 550 hp @ 6500 rpm"
+          },
+          "torque": {
+            "P250": "269 lb-ft @ 1500-4500 rpm",
+            "P300": "295 lb-ft @ 1500-4500 rpm",
+            "P380": "369 lb-ft @ 1750-5500 rpm",
+            "P400": "406 lb-ft @ 1500-4500 rpm",
+            "SVAutobiography Dynamic Edition": "516 lb-ft @ 2500-5500 rpm"
+          },
+          "transmissao": "Automática de 8 velocidades",
+          "tracao": "Integral (Terrain Response 2)",
+          "consumo": {
+            "P250": "23 mpg (cidade) / 29 mpg (estrada)",
+            "P300": "22 mpg (cidade) / 28 mpg (estrada)",
+            "P380": "20 mpg (cidade) / 26 mpg (estrada)",
+            "P400": "19 mpg (cidade) / 25 mpg (estrada)",
+            "SVAutobiography Dynamic Edition": "17 mpg (cidade) / 23 mpg (estrada)"
+          },
+          "capacidade_tanque_combustivel": "22.5 galões (85 litros)",
+          "dimensoes": {
+            "comprimento": "187.8 polegadas (4771 mm)",
+            "largura": "76.8 polegadas (1951 mm)",
+            "altura": "66.5 polegadas (1690 mm)",
+            "distancia_entre_eixos": "112.2 polegadas (2850 mm)"
+          },
+          "peso": "4250 libras (1928 kg)",
+          "capacidade_passageiros": "5 pessoas",
+          "volume_porta_malas": "25.1 pés cúbicos (710 litros)"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53773147327_e52bc9da29_o.png",
+          "https://live.staticflickr.com/65535/53774069281_ae2ef02bd6_o.png",
+          "https://live.staticflickr.com/65535/53774268798_f6703aa50f_o.png",
+          "https://live.staticflickr.com/65535/53774484140_bc7290a52f_o.png"
+        ]
+      }
+    },
+    {
+      "Mercedes_Benz_S580_2021": {
+        "modelo": "Mercedes-Benz S 580 2021",
+        "descricao": "O Mercedes-Benz S 580 2021 é um sedã de luxo de alto desempenho que oferece uma experiência de condução suave e sofisticada. Com um motor potente, um interior opulento e recursos tecnológicos avançados, o S 580 é o epítome de luxo e inovação.",
+        "especificacoes_tecnicas": {
+          "motor": "4.0 litros, V8, biturbo, 496 hp @ 5500-6500 rpm",
+          "torque": "516 lb-ft @ 2000-4500 rpm",
+          "transmissao": "Automática de 9 velocidades",
+          "tracao": "Traseira (opcional: integral - 4MATIC)",
+          "consumo": "19 mpg (cidade) / 27 mpg (estrada)", 
+          "capacidade_tanque_combustivel": "21.1 galões (80 litros)",
+          "dimensoes": {
+            "comprimento": "202.5 polegadas (5144 mm)",
+            "largura": "76.3 polegadas (1938 mm)",
+            "altura": "58.1 polegadas (1476 mm)",
+            "distancia_entre_eixos": "126.4 polegadas (3211 mm)"
+          },
+          "peso": "4730 libras (2145 kg)",
+          "capacidade_passageiros": "5 pessoas",
+          "volume_porta_malas": "17.6 pés cúbicos (498 litros)"
+        },
+        "imagens": [
+          "https://live.staticflickr.com/65535/53774067121_b357dc49e6_o.png",
+          "https://live.staticflickr.com/65535/53774268648_65b943c75d_o.png",
+          "https://live.staticflickr.com/65535/53774483990_317c3772d8_o.png",
+          "https://live.staticflickr.com/65535/53774486300_f65cbf2e53_o.png"
+        ]
+      }
+    }
+  ]
