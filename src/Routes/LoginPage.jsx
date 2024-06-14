@@ -1,31 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const LoginPage =()=> {
+const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value)) {
+      setEmailError(""); // Limpa o erro se o email estiver válido
+    } else {
+      setEmailError("Por favor, insira um email válido.");
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    if (e.target.value.length >= 8) {
+      setPasswordError(""); // Limpa o erro se a senha tiver pelo menos 8 caracteres
+    } else {
+      setPasswordError("Sua senha deve ter pelo menos 8 caracteres.");
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Impede o comportamento padrão do formulário
+    if (!emailError &&!passwordError) {
+      // Aqui você pode adicionar a lógica para autenticar o usuário
+      console.log("Login realizado com sucesso!");
+    } else {
+      console.log("Verifique os campos e tente novamente.");
+    }
+  };
+
   return (
     <div className="flex justify-center items-center mt-[50px] text-white">
       <div
         id="login_card"
-        className="bg-[#B68322] flex justify-center items-center p-6 w-[25%] rounded-[7px] flex-col"
+        className="bg-[#B68322] flex justify-center items-center p-6 m-10 w-[25%] rounded-[7px] flex-col"
       >
         <span className="mt-6 text-[1.5rem]">Bem vindo de volta</span>
 
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <div id="input_group" className="mt-10 text-black">
             <input
               type="email"
               name="email-login"
               id="email-login"
               placeholder="E-mail..."
-              className="p-[7px] w-[300px] rounded-[7px]"
+              className={`p-[7px] w-[300px] rounded-[7px] ${emailError? "border-red-500" : ""}`}
+              value={email}
+              onChange={handleEmailChange}
             />
+            {emailError && <p className="text-red-500">{emailError}</p>}
+
             <input
               type="password"
               name="password-login"
               id="password-login"
               placeholder="Senha..."
-              className="p-[7px] w-[300px] rounded-[7px] m-3 text-black"
+              className={`p-[7px] w-[300px] rounded-[7px] m-3 text-black ${passwordError? "border-red-500" : ""}`}
+              value={password}
+              onChange={handlePasswordChange}
             />
+            {passwordError && <p className="text-red-500">{passwordError}</p>}
           </div>
 
           <div id="cadastro" className="flex flex-col mb-3">
@@ -34,17 +74,17 @@ const LoginPage =()=> {
           </div>
 
           <Link to={'/'}>
-          <button
-              id="loginButton"
-              className="bg-white hover:bg-green-950 hover:text-white duration-300 w-[300px] rounded-[7px] p-[7px] text-black font-bold "
-            >
-              Entrar
+            <button
+                id="loginButton"
+                className="bg-white hover:bg-green-950 hover:text-white duration-300 w-[300px] rounded-[7px] p-[7px] text-black font-bold "
+              >
+                Entrar
             </button>
           </Link>
         </form>
       </div>
     </div>
   );
-}
+};
 
 export default LoginPage;

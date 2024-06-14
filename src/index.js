@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-//Configurando router
+// Configurando router
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import HomePage from './Routes/HomePage';
@@ -11,6 +11,8 @@ import LoginPage from './Routes/LoginPage';
 import RegisterPage from './Routes/RegisterPage';
 import NotFoundPage from './Routes/NotFoundPage';
 import QuemSomos from './Routes/QuemSomos';
+import InfoCar from './Components/InfoCar';
+import Pagamento from './Components/Pagamento';
 
 const router = createBrowserRouter([
   {
@@ -23,19 +25,27 @@ const router = createBrowserRouter([
       },
       {
         path: "login",
-        element: <LoginPage/>,
+        element: <LoginPage />,
       },
       {
         path: "register",
-        element: <RegisterPage/>
+        element: <RegisterPage />,
       },
       {
-        path: "NotFoundPage",
-        element: <NotFoundPage/>
+        path: "*",
+        element: <NotFoundPage />,
       },
       {
-        path: "AboutUs",
-        element: <QuemSomos/>
+        path: "aboutus",
+        element: <QuemSomos />,
+      },
+      {
+        path: "infoCar/:id",
+        element: <InfoCar />,
+      },
+      {
+        path: "pagamento",
+        element: <Pagamento />
       }
     ]
   },

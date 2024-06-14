@@ -1,9 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
-  return (
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
+  // Carrega dados do LocalStorage quando o componente é montado
+  useEffect(() => {
+    const userData = localStorage.getItem('userData');
+    if (userData) {
+      const parsedData = JSON.parse(userData);
+      setUserName(parsedData.userName || '');
+      setEmail(parsedData.email || '');
+      setPassword(parsedData.password || '');
+    }
+  }, []);
+
+  const handleUserNameChange = (e) => {
+    setUserName(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validação simples (exemplo)
+    if (userName.trim()!== '' && email.includes('@') && password.length >= 8) {
+      // Salva os dados no LocalStorage
+      localStorage.setItem('userData', JSON.stringify({
+        userName,
+        email,
+        password,
+      }));
+
+      alert("Dados salvos com sucesso!");
+    } else {
+      alert("Preencha todos os campos corretamente.");
+    }
+  };
+
+  return (
     <div className="flex flex-col justify-center items-center mt-8 text-white">
       <div
         id="login_card"
@@ -11,13 +55,15 @@ const RegisterPage = () => {
       >
         <span className="mt-3 text-[1.5rem]">Cadastro</span>
 
-        <form action="" className="text-black">
+        <form action="" onSubmit={handleSubmit} className="text-black">
           <div id="input_group" className="mt-4">
             <input
               type="text"
               name="userName"
               id="userName"
               placeholder="Nome..."
+              value={userName}
+              onChange={handleUserNameChange}
               className="p-[7px] w-[300px] rounded-[7px] mb-3"
             />
 
@@ -27,6 +73,8 @@ const RegisterPage = () => {
               id="email-login"
               placeholder="E-mail..."
               required
+              value={email}
+              onChange={handleEmailChange}
               className="p-[7px] w-[300px] rounded-[7px] mb-3"
             />
             <input
@@ -35,6 +83,8 @@ const RegisterPage = () => {
               id="password-login"
               placeholder="Senha..."
               required
+              value={password}
+              onChange={handlePasswordChange}
               className="p-[7px] w-[300px] rounded-[7px]"
             />
           </div>

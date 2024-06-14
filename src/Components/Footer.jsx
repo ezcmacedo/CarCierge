@@ -6,12 +6,11 @@ import { UilTwitter } from '@iconscout/react-unicons'
 
 function Footer() {
     return (
-        <div className='bg-[#090B01] text-[#B68322] fixed inset-x-0 bottom-0 p-6'>
+        <div className='bg-[#090B01] text-[#B68322] relative inset-x-0 bottom-0 p-6 h-[10rem]' >
             <div id="footer_items" className='flex justify-between items-center'>
                 <div id="devs" className='flex flex-col gap-2'>
                     <a href="" className='flex'><UilGithub />Enzo Macedo</a>
                     <a href="" className='flex'><UilGithub />Alexandre</a>
-                    <a href="" className='flex'><UilGithub />alguém</a>
                 </div>
 
                 <div id="social_media" className='text-[1.2rem]'>
