@@ -8,13 +8,15 @@ import React, { useState, useEffect } from 'react';
 function App() {
 
   return (
+
     <div className="App bg-blackfigma bg-opacity-90 min-h-screen">
-      
+
       <Header></Header>
       <Outlet />
-      <Footer></Footer> 
+      <Footer></Footer>
 
     </div>
+
   );
 }
 

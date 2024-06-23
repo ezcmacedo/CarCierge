@@ -41,6 +41,8 @@ const CarouselHome = () => {
     setCurrentIndex(slideIndex);
   };
 
+  console.log()
+
   return (
 
     <div className='h-[400px] w-[80%] mx-auto py-1 px-5 relative group'>
