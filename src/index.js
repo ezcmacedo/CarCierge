@@ -13,6 +13,7 @@ import NotFoundPage from './Routes/NotFoundPage';
 import QuemSomos from './Routes/QuemSomos';
 import InfoCar from './Components/InfoCar';
 import Pagamento from './Components/Pagamento';
+import VeiculosPage from "./Routes/VeiculosPage";
 
 const router = createBrowserRouter([
   {
@@ -40,11 +41,15 @@ const router = createBrowserRouter([
         element: <QuemSomos />,
       },
       {
+        path: "Veiculos",
+        element: <VeiculosPage />,
+      },
+      {
         path: "infoCar/:id",
         element: <InfoCar />,
       },
       {
-        path: "pagamento",
+        path: "pagamento/",
         element: <Pagamento />
       }
     ]

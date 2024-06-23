@@ -6,6 +6,7 @@ import ServicesBanner from '../Components/ServicesBanner'
 import CarsBanner from '../Components/CarsBanner'
 
 function HomePage() {
+
   return (
     <>
         <CarouselMenu />
