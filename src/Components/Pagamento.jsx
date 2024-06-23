@@ -2,33 +2,39 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import FormularioPagamentoCartao from './FormularioPagamentoCartao';
 import FormularioPagamentoPix from './FormularioPagamentoPix';
-import axiosInstance from '../axiosConfig'; // Importe axiosInstance do seu arquivo axiosConfig.js
+import axiosInstance from '../axiosConfig';
+import criarReserva from './CriarReserva';
+import FazerPagamento from "../Components/FazerPagamento";
+import {jwtDecode} from 'jwt-decode';
 
 const Pagamento = () => {
     const location = useLocation();
     const { nomeUsuario, idCarro, taxaDiaria } = location.state || {};
 
-    // Função auxiliar para formatar a data no formato YYYY-MM-DD
     const getCurrentDate = () => {
         const date = new Date();
         const year = date.getFullYear();
         let month = date.getMonth() + 1;
         let day = date.getDate();
-
-        // Adiciona zero à esquerda se for menor que 10 (para manter o formato YYYY-MM-DD)
         month = month < 10 ? `0${month}` : month;
         day = day < 10 ? `0${day}` : day;
-
         return `${year}-${month}-${day}`;
     };
+
+    // Obtém o token do localStorage e decodifica
+    const token = localStorage.getItem('token'); // Substitua 'token' pelo nome correto do item no localStorage
+    const decodedToken = jwtDecode(token);
+
+    // Obtém o userId do token decodificado
+    const userId = decodedToken.id;
 
     const [formData, setFormData] = useState({
         cardNumber: '',
         nameOnCard: '',
         expiryDate: '',
         cvv: '',
-        rentalDate: getCurrentDate(), // Inicia com a data atual
-        returnDate: getCurrentDate(), // Inicia com a data atual
+        rentalDate: getCurrentDate(),
+        returnDate: getCurrentDate(),
     });
 
     const [errors, setErrors] = useState({
@@ -45,7 +51,9 @@ const Pagamento = () => {
         modelo: '',
     });
 
-    const [formaPagamento, setFormaPagamento] = useState('Cartão'); // Estado para controlar a forma de pagamento selecionada
+    const [formaPagamento, setFormaPagamento] = useState('Cartão');
+
+    const [reservaCriada, setReservaCriada] = useState(false); // Para rastrear se a reserva foi criada
 
     useEffect(() => {
         const fetchCarroInfo = async () => {
@@ -53,6 +61,11 @@ const Pagamento = () => {
                 const response = await axiosInstance.get(`/cars/${idCarro}`);
                 const { imagem, marca, modelo } = response.data;
                 setCarroInfo({ imagem, marca, modelo });
+
+                console.log(`Testando endpoint /reservations/user/${userId}/car/${idCarro}`);
+                const reservationsResponse = await axiosInstance.get(`/reservations/user/${userId}/car/${idCarro}`);
+                console.log('Reservas encontradas:', reservationsResponse.data);
+
             } catch (error) {
                 console.error('Erro ao buscar informações do carro:', error);
             }
@@ -65,8 +78,8 @@ const Pagamento = () => {
 
     const handleCardNumberChange = (e) => {
         const { value } = e.target;
-        const cleanedValue = value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-        const formattedValue = cleanedValue.replace(/(\d{4})(?=\d)/g, '$1 '); // Adiciona espaço a cada 4 dígitos
+        const cleanedValue = value.replace(/\D/g, '');
+        const formattedValue = cleanedValue.replace(/(\d{4})(?=\d)/g, '$1 ');
 
         setFormData((prevData) => ({
             ...prevData,
@@ -81,7 +94,7 @@ const Pagamento = () => {
 
     const handleExpiryDateChange = (e) => {
         const { value } = e.target;
-        const cleanedValue = value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+        const cleanedValue = value.replace(/\D/g, '');
         let formattedValue = cleanedValue;
 
         if (cleanedValue.length > 2) {
@@ -157,7 +170,7 @@ const Pagamento = () => {
             const returnD = new Date(returnDate);
             const diffTime = Math.abs(returnD - rental);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            const pricePerDay = taxaDiaria || 0; // Utilizando a taxa diária passada como estado, considerando valor padrão 0 se não definido
+            const pricePerDay = taxaDiaria || 0;
             setPaymentPreview(diffDays * pricePerDay);
         }
     };
@@ -166,17 +179,30 @@ const Pagamento = () => {
         calculatePaymentPreview();
     }, [formData.rentalDate, formData.returnDate]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Lógica de validação e envio do formulário
-        mostrarAlerta(); // Chama a função de alerta ao submeter o formulário
+
+        const reservaData = {
+            data_reserva: formData.rentalDate,
+            data_fim_reserva: formData.returnDate,
+            status_reserva: 'Em andamento',
+            userId: userId,
+            carId: idCarro,
+        };
+
+        try {
+            await criarReserva(reservaData);
+
+            setReservaCriada(true); // Define a reserva como criada
+        } catch (error) {
+            console.error('Erro ao criar a reserva:', error);
+        }
     };
 
     function mostrarAlerta() {
         alert('Carro alugado com sucesso');
     }
 
-    // Função para alternar entre Formulário de Pagamento por Cartão e Pix
     const handleFormaPagamentoChange = (e) => {
         const { value } = e.target;
         setFormaPagamento(value);
@@ -260,6 +286,17 @@ const Pagamento = () => {
                     </button>
                 </div>
             </form>
+
+            {reservaCriada && (
+                <FazerPagamento
+                    key={reservaCriada ? "reload" : "initial"}
+                    userId={userId}
+                    carId={idCarro}
+                    status="pago"
+                    metodo_pagamento={formaPagamento}
+                    valor={paymentPreview}
+                />
+            )}
         </div>
     );
 };

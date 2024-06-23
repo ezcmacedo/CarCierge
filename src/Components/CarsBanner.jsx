@@ -30,7 +30,7 @@ const CarsBanner = () => {
                         <li key={index} className='w-[80%] min-h-[26rem] flex flex-col m-auto justify-center items-center bg-[#B68322] opacity-90 z-0 mt-10'>
                             <img src={carro.imagem} alt={`${carro.marca} ${carro.modelo}`} className='w-[80%] z-10'/>
                             <p className='text-[1.8rem]'>{carro.marca} {carro.modelo}</p>
-                            <Link to={`/infoCar/${carro.id}`} className='bg-[#35353D] py-3 rounded-[7px] px-3 mt-10'>Mais Informações</Link>
+                            <Link to={`/infoCar/${carro.id}`} className='bg-[#35353D] py-3 rounded-[7px] px-3 mt-10 mb-10'>Mais Informações</Link>
                         </li>
                     ))}
                 </ul>
