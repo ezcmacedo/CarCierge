@@ -1,18 +1,34 @@
-import React, {useState, useEffect} from 'react';
-import {useLocation} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import FormularioPagamentoCartao from './FormularioPagamentoCartao';
+import FormularioPagamentoPix from './FormularioPagamentoPix';
 import axiosInstance from '../axiosConfig'; // Importe axiosInstance do seu arquivo axiosConfig.js
 
 const Pagamento = () => {
     const location = useLocation();
     const { nomeUsuario, idCarro, taxaDiaria } = location.state || {};
 
+    // Função auxiliar para formatar a data no formato YYYY-MM-DD
+    const getCurrentDate = () => {
+        const date = new Date();
+        const year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+
+        // Adiciona zero à esquerda se for menor que 10 (para manter o formato YYYY-MM-DD)
+        month = month < 10 ? `0${month}` : month;
+        day = day < 10 ? `0${day}` : day;
+
+        return `${year}-${month}-${day}`;
+    };
+
     const [formData, setFormData] = useState({
         cardNumber: '',
         nameOnCard: '',
         expiryDate: '',
         cvv: '',
-        rentalDate: '',
-        returnDate: '',
+        rentalDate: getCurrentDate(), // Inicia com a data atual
+        returnDate: getCurrentDate(), // Inicia com a data atual
     });
 
     const [errors, setErrors] = useState({
@@ -28,6 +44,8 @@ const Pagamento = () => {
         marca: '',
         modelo: '',
     });
+
+    const [formaPagamento, setFormaPagamento] = useState('Cartão'); // Estado para controlar a forma de pagamento selecionada
 
     useEffect(() => {
         const fetchCarroInfo = async () => {
@@ -157,6 +175,13 @@ const Pagamento = () => {
     function mostrarAlerta() {
         alert('Carro alugado com sucesso');
     }
+
+    // Função para alternar entre Formulário de Pagamento por Cartão e Pix
+    const handleFormaPagamentoChange = (e) => {
+        const { value } = e.target;
+        setFormaPagamento(value);
+    };
+
     return (
         <div className='min-h-screen flex flex-col justify-center items-center mt-2 mb-5'>
             <form onSubmit={handleSubmit}
@@ -169,91 +194,67 @@ const Pagamento = () => {
                             alt={`Imagem do carro ${idCarro}`}
                             className="w-full rounded-lg mb-4"
                         />
-
                     )}
                     <p className="text-black text-2xl mt-1">
-                      Carro:  {carroInfo.marca} {carroInfo.modelo}
+                        Carro: {carroInfo.marca} {carroInfo.modelo}
                     </p>
+                </div>
+
+                <div className="flex justify-center items-center">
+                    <label htmlFor="metodo">Escolha a forma de pagamento:</label>
+                    <select id="metodo" name="pagamento" onChange={handleFormaPagamentoChange}>
+                        <option value="Cartão">Cartão de crédito</option>
+                        <option value="Pix">Pix</option>
+                    </select>
                 </div>
 
                 <div className="flex flex-col justify-center items-center">
                     <div>
-                        <label htmlFor="cardNumber" className="block mb-2">Número do Cartão</label>
-                        <input
-                            type="text"
-                            name="cardNumber"
-                            value={formData.cardNumber}
-                            onChange={handleCardNumberChange}
-                            placeholder="1234 5678 9012 3456"
-                            className="w-[350px] p-2 border border-gray-300 rounded-md"
-                            maxLength="19"
-                        />
-                        {errors.cardNumber && <p className="text-white">{errors.cardNumber}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor="nameOnCard" className="block mb-2">Nome no Cartão</label>
-                        <input
-                            type="text"
-                            name="nameOnCard"
-                            value={formData.nameOnCard}
-                            onChange={handleChange}
-                            placeholder="Nome Completo"
-                            className="w-[350px] p-2 border border-gray-300 rounded-md"
-                        />
-                        {errors.nameOnCard && <p className="text-white">{errors.nameOnCard}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor="expiryDate" className="block mb-2">Data de Expiração</label>
-                        <input
-                            type="text"
-                            name="expiryDate"
-                            value={formData.expiryDate}
-                            onChange={handleExpiryDateChange}
-                            placeholder="MM/AA"
-                            className="w-[350px] p-2 border border-gray-300 rounded-md"
-                            maxLength="5"
-                        />
-                        {errors.expiryDate && <p className="text-white">{errors.expiryDate}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor="cvv" className="block mb-2">CVV</label>
-                        <input
-                            type="text"
-                            name="cvv"
-                            value={formData.cvv}
-                            onChange={handleChange}
-                            placeholder="CVV"
-                            className="w-[350px] p-2 border border-gray-300 rounded-md"
-                            maxLength="3"
-                        />
-                        {errors.cvv && <p className="text-white">{errors.cvv}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor="rentalDate" className="block mb-2">Data de Aluguel</label>
+                        <label htmlFor="rentalDate" className="block mb-2 mt-2">Data de Aluguel</label>
                         <input
                             type="date"
                             name="rentalDate"
                             value={formData.rentalDate}
                             onChange={handleDateChange}
+                            min={getCurrentDate()} // Define a data mínima como a data atual
                             className="w-[350px] p-2 border border-gray-300 rounded-md"
                         />
                     </div>
                     <div>
-                        <label htmlFor="returnDate" className="block mb-2">Data de Devolução</label>
+                        <label htmlFor="returnDate" className="block mb-2 mt-2">Data de Devolução</label>
                         <input
                             type="date"
                             name="returnDate"
                             value={formData.returnDate}
                             onChange={handleDateChange}
+                            min={formData.rentalDate} // Define a data mínima como a data de aluguel selecionada
                             className="w-[350px] p-2 border border-gray-300 rounded-md"
                         />
                     </div>
                     <div>
-                        <label className="block mb-2">Prévia do Pagamento</label>
+                        <label className="block mb-2 mt-2">Prévia do Pagamento</label>
                         <p className="w-[350px] p-2  border border-gray-300 rounded-md bg-white text-black">
                             R$ {paymentPreview}
                         </p>
                     </div>
+
+                    {formaPagamento === 'Cartão' && (
+                        <FormularioPagamentoCartao
+                            formData={formData}
+                            errors={errors}
+                            handleCardNumberChange={handleCardNumberChange}
+                            handleChange={handleChange}
+                            handleExpiryDateChange={handleExpiryDateChange}
+                        />
+                    )}
+                    {formaPagamento === 'Pix' && (
+                        <FormularioPagamentoPix
+                            formData={formData}
+                            errors={errors}
+                            handleChange={handleChange}
+                        />
+                    )}
+
                     <button onClick={mostrarAlerta} type="submit"
                             className="bg-blue-600 text-white px-4 py-2 rounded-md mt-10 mb-6">Confirmar Pedido
                     </button>
