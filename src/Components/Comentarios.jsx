@@ -1,9 +1,8 @@
-// src/components/Comentarios.js
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../axiosConfig';
 import { FaStar } from "react-icons/fa";
 import { IconContext } from "react-icons";
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import { formatDateTime } from '../utils/dataConverter';
 
 function Comentarios({ carId }) {
@@ -12,17 +11,22 @@ function Comentarios({ carId }) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // Fazendo a requisição GET para obter os comentários
-        axiosInstance.get(`/ratings/all`)
-            .then((response) => {
+        setLoading(true); // Inicia com loading true
+
+        const fetchComments = async () => {
+            try {
+                const response = await axiosInstance.get(`/ratings/all`);
                 setComments(response.data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                setError(error);
-                setLoading(false);
-            });
-    }, [carId]);
+                setLoading(false); // Após carregar, seta loading false
+            } catch (error) {
+                console.error('Erro ao buscar comentários:', error);
+                setError('Erro ao buscar comentários. Tente novamente.');
+                setLoading(false); // Em caso de erro, seta loading false
+            }
+        };
+
+        fetchComments();
+    }, []);
 
     const handleDelete = async (commentId) => {
         try {
@@ -56,16 +60,19 @@ function Comentarios({ carId }) {
     const decodedToken = token ? jwtDecode(token) : null;
     const userId = decodedToken ? decodedToken.id : null;
 
+    // Filtrar os comentários pelo carId, se existir
+    const filteredComments = carId ? comments.filter(comment => comment.car.id === carId) : comments;
+
     return (
         <div className="w-[31.7rem] min-h-[12rem] flex flex-col bg-black mt-0 mb-[6rem] rounded-2xl">
             <div>
                 <h1 className="text-white mt-5 mb-2 text-xl">Comentários</h1>
             </div>
-            {comments.length === 0 ? (
-                <p className="text-white">Nenhum comentário disponível.</p>
+            {filteredComments.length === 0 ? (
+                <p className="text-white">Nenhum comentário disponível para este carro.</p>
             ) : (
                 <div className="flex flex-col justify-center items-center">
-                    {comments.map((comment) => (
+                    {filteredComments.map((comment) => (
                         <div key={comment.id} className="flex flex-col justify-center items-center mb-7">
                             <div className=" w-[28rem] flex justify-between items-start">
                                 <p className="text-white mb-2">Nome: {comment.user.firstName} {comment.user.lastName}</p>
