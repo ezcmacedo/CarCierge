@@ -7,12 +7,12 @@ import PaymentsInfo from "../Components/Admin/PaymentsInfo";
 function AdminTerminal() {
 
     return (
-        <div className="min-h-[100vh] mb-[70rem]">
+        <div className="min-h-[100vh] mb-[50rem]">
             <div className="h-[31.5rem]">
                 <UsersInfo />
-                <CarsInfo />
                 <ReservationsInfo />
                 <PaymentsInfo />
+                <CarsInfo />
             </div>
         </div>
     )

@@ -37,12 +37,12 @@ function UsersInfo() {
                 <tbody className="bg-white text-[0.9rem]">
                 {users.map((user) => (
                     <tr key={user.id}>
-                        <td className="text-[0.8rem] p-1">{user.id}</td>
+                        <td className="text-[0.8rem] p-1 w-[17rem]">{user.id}</td>
                         <td className="text-[0.8rem] p-1">{user.firstName}</td>
                         <td className="text-[0.8rem] p-1">{user.lastName}</td>
                         <td className="text-[0.8rem] p-1">{user.email}</td>
                         <td className="text-[0.8rem] p-1">{user.phone_number}</td>
-                        <td className="text-[0.8rem] p-1">{user.address}</td>
+                        <td className="text-[0.8rem] p-1 truncate w-[17rem]">{user.address}</td>
                         <td className="text-[0.8rem] p-1">{user.city}</td>
                         <td className="text-[0.8rem] p-1">{user.state}</td>
                         <td className="text-[0.8rem] p-1">{user.created_at}</td>

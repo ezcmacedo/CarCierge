@@ -76,7 +76,7 @@ const LoginPage = () => {
                   value={email}
                   onChange={handleEmailChange}
               />
-              {emailError && <p className="text-red-500">{emailError}</p>}
+              {emailError && <p className="text-black">{emailError}</p>}
 
               <input
                   type="password"

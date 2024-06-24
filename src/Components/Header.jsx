@@ -46,9 +46,6 @@ function Header() {
                         </Link>
                     </div>
                     <div id="items" className='text-[#B68322] flex gap-6'>
-                        <Link to='/NotFoundPage'>
-                            Serviços
-                        </Link>
                         <Link to='/Veiculos'>
                             Veículos
                         </Link>
