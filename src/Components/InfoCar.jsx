@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axiosInstance from '../axiosConfig';
-import {jwtDecode} from 'jwt-decode'; // Importa a biblioteca jwt-decode
+import FazerComentario from "./FazerComentario";
+import Comentarios from "./Comentarios";
+import {jwtDecode} from 'jwt-decode'; // Corrigir importação
 
 const InfoCar = () => {
   const { id } = useParams();
   const [carro, setCarro] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [usuario, setUsuario] = useState(null); // Estado para armazenar informações do usuário
-  const navigate = useNavigate(); // Hook para navegação
+  const [usuario, setUsuario] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCarro = async () => {
@@ -28,16 +30,12 @@ const InfoCar = () => {
   }, [id]);
 
   useEffect(() => {
-    // Carregar informações do usuário do localStorage (se disponível)
     const token = localStorage.getItem('token');
     if (token) {
       try {
-        // Decodificar o token
         const decodedToken = jwtDecode(token);
-
-        // Extrair informações do payload decodificado
-        const { firstName, lastName} = decodedToken; // Substitua com as propriedades corretas do seu token
-        setUsuario({ nome: `${firstName} ${lastName}`});
+        const { firstName, lastName } = decodedToken;
+        setUsuario({ nome: `${firstName} ${lastName}` });
       } catch (error) {
         console.error('Erro ao decodificar o token:', error);
       }
@@ -45,13 +43,10 @@ const InfoCar = () => {
   }, []);
 
   const handleAlugarClick = () => {
-    // Verificar se o usuário está logado
     const token = localStorage.getItem('token');
     if (!token) {
-      // Se não estiver logado, redirecionar para a página de login
       navigate('/login');
     } else {
-      // Se estiver logado, pode prosseguir com o aluguel
       navigate('/pagamento', { state: { nomeUsuario: usuario.nome, idCarro: carro.id, taxaDiaria: carro.taxa_diaria } });
     }
   };
@@ -69,7 +64,7 @@ const InfoCar = () => {
   }
 
   return (
-      <div className="min-h-screen flex flex-col justify-center items-center mb-[-5%] mt-20">
+      <div className="min-h-screen flex flex-col justify-center items-center mb-[-5%] mt-[9.5rem]">
         <div className="flex justify-around items-center gap-10 mt-[-10%] w-[70%] bg-[#B68322] rounded-lg px-12">
           <img className="w-[50%]" src={carro.imagem} alt={`${carro.marca} ${carro.modelo}`} />
           <div id="listaCarro">
@@ -88,12 +83,13 @@ const InfoCar = () => {
         <div id="alugar" className="w-[500px] bg-[#B68322] mt-[1rem] p-5 flex flex-col rounded-lg ">
           <p className="text-[1.5rem] font-bold text-white">R$ {carro.taxa_diaria}/Diária</p>
           <button
-              onClick={handleAlugarClick} // Evento ao clicar em Alugar agora
+              onClick={handleAlugarClick}
               className="m-2 text-white bg-[#123A08] hover:bg-[#2d802d] transition duration-300 p-2 rounded-lg"
-          >
-            Alugar agora
+          > Alugar agora
           </button>
         </div>
+        <FazerComentario carId={id} />
+        <Comentarios />
       </div>
   );
 };
