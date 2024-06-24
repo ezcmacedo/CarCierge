@@ -14,6 +14,8 @@ import QuemSomos from './Routes/QuemSomos';
 import InfoCar from './Components/InfoCar';
 import Pagamento from './Components/Pagamento';
 import VeiculosPage from "./Routes/VeiculosPage";
+import AdminTerminal from "./Routes/AdminTerminal";
+import PrivateRoute from "./Components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "pagamento/",
         element: <Pagamento />
+      },
+      {
+        path: "adminterminal/",
+        element: <PrivateRoute component={AdminTerminal} />
       }
     ]
   },

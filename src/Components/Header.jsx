@@ -64,7 +64,7 @@ function Header() {
                                 {menuVisible && (
                                     <div id="menu" className="absolute w-20 h-20 bg-black right-[-0.7rem] top-[2.8rem] pb-3 pt-0 border-amber-500 border-l-2 border-b-2">
                                         <ul>
-                                            <li className="m-2">Conta</li>
+                                            <Link to='/AdminTerminal'><li className="m-2">Conta</li></Link>
                                             <li className="m-2" onClick={handleLogout}>Logout</li>
                                         </ul>
                                     </div>
