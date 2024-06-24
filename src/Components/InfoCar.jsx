@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axiosInstance from '../axiosConfig';
-import FazerComentario from "./FazerComentario";
-import Comentarios from "./Comentarios"; // Importe correto do componente Comentarios
-import { jwtDecode } from 'jwt-decode'; // Corrigir importação
+import Comentarios from "./Comentarios";
+import { jwtDecode } from 'jwt-decode';
 
 const InfoCar = () => {
   const { id } = useParams();
@@ -64,7 +63,7 @@ const InfoCar = () => {
   }
 
   return (
-      <div className="min-h-screen flex flex-col justify-center items-center mb-[-5%] mt-[9.5rem]">
+      <div className="min-h-screen flex flex-col justify-center items-center mb-[-5%] mt-[11.5rem]">
         <div className="flex justify-around items-center gap-10 mt-[-10%] w-[70%] bg-[#B68322] rounded-lg px-12">
           <img className="w-[50%]" src={carro.imagem} alt={`${carro.marca} ${carro.modelo}`} />
           <div id="listaCarro">
@@ -89,7 +88,7 @@ const InfoCar = () => {
           </button>
         </div>
         {/* Passando o carId para o componente Comentarios */}
-        <FazerComentario carId={id} />
+
         <Comentarios carId={id} />
       </div>
   );

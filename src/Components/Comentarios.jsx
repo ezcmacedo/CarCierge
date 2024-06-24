@@ -4,29 +4,33 @@ import { FaStar } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { jwtDecode } from 'jwt-decode';
 import { formatDateTime } from '../utils/dataConverter';
+import FazerComentario from "./FazerComentario";
 
 function Comentarios({ carId }) {
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const fetchComments = async () => {
+        try {
+            const response = await axiosInstance.get(`/ratings/all`);
+            setComments(response.data);
+            setLoading(false);
+        } catch (error) {
+            console.error('Erro ao buscar comentários:', error);
+            setError('Erro ao buscar comentários. Tente novamente.');
+            setLoading(false);
+        }
+    };
+
     useEffect(() => {
-        setLoading(true); // Inicia com loading true
-
-        const fetchComments = async () => {
-            try {
-                const response = await axiosInstance.get(`/ratings/all`);
-                setComments(response.data);
-                setLoading(false); // Após carregar, seta loading false
-            } catch (error) {
-                console.error('Erro ao buscar comentários:', error);
-                setError('Erro ao buscar comentários. Tente novamente.');
-                setLoading(false); // Em caso de erro, seta loading false
-            }
-        };
-
         fetchComments();
-    }, []);
+    }, []); // A dependência [] garante que fetchComments seja chamado apenas uma vez, na primeira renderização
+
+    const handleCommentSubmit = () => {
+        // Atualiza os comentários após o submit
+        fetchComments();
+    };
 
     const handleDelete = async (commentId) => {
         try {
@@ -64,6 +68,8 @@ function Comentarios({ carId }) {
     const filteredComments = carId ? comments.filter(comment => comment.car.id === carId) : comments;
 
     return (
+    <>
+        <FazerComentario carId={carId} onCommentSubmit={handleCommentSubmit}/>
         <div className="w-[31.7rem] min-h-[12rem] flex flex-col bg-black mt-0 mb-[6rem] rounded-2xl">
             <div>
                 <h1 className="text-white mt-5 mb-2 text-xl">Comentários</h1>
@@ -100,6 +106,7 @@ function Comentarios({ carId }) {
                 </div>
             )}
         </div>
+    </>
     );
 }
 

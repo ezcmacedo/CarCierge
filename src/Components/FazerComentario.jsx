@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import axios from '../axiosConfig';
 import {jwtDecode} from 'jwt-decode';
 
-
-function FazerComentario({ carId }) {
+function FazerComentario({ carId, onCommentSubmit }) {
     const [avaliacao, setAvaliacao] = useState(0);
     const [comentario, setComentario] = useState('');
     const [erro, setErro] = useState(null);
@@ -46,6 +45,8 @@ function FazerComentario({ carId }) {
             setAvaliacao(1);
             setComentario('');
             setErro(null);
+
+            onCommentSubmit();
 
         } catch (error) {
             console.error('Erro ao enviar o comentário:', error);
